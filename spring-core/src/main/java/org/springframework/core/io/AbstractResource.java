@@ -32,6 +32,7 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.ResourceUtils;
 
 /**
+ * Resource默认的抽象实现
  * Convenience base class for {@link Resource} implementations,
  * pre-implementing typical behavior.
  *
@@ -48,6 +49,7 @@ public abstract class AbstractResource implements Resource {
 	private static final LogAccessor logAccessor = new LogAccessor(AbstractResource.class);
 
 	/**
+	 * 判断资源是否存在
 	 * This implementation checks whether a File can be opened,
 	 * falling back to whether an InputStream can be opened.
 	 * This will cover both directories and content resources.
@@ -82,6 +84,7 @@ public abstract class AbstractResource implements Resource {
 	}
 
 	/**
+	 * 表示未被打开
 	 * This implementation always returns {@code false}.
 	 */
 	@Override
@@ -90,6 +93,7 @@ public abstract class AbstractResource implements Resource {
 	}
 
 	/**
+	 * 表示不是一个文件
 	 * This implementation always returns {@code false}.
 	 */
 	@Override
